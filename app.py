@@ -2,7 +2,7 @@ from flask import Flask, request, json
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": ["http://127.0.0.1:5500", "http://hain.umag.cl/~arilopez/"]}})
 global dataJSON
 global dataSTRING
 @app.route('/json', methods=['POST'])
@@ -22,8 +22,3 @@ def handle_string():
     print(f'String recibido: {dataSTRING}')
     # Aquí puedes guardar 'data' en la variable que quieras
     return 'OK, STRING recibido'
-
-def run_server():
-   app.run(host='0.0.0.0', port=5000)
-run_server()
-
