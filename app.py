@@ -19,6 +19,8 @@ def handle_json():
     print(f'Data recibida: {dataJSON}')
     with open('data.json', 'w') as f:
         json.dump(data, f)
+    for filename in os.listdir(dir_path):
+        print(filename)
     return 'OK, JSON recibido'
 
 @app.route('/string', methods=['POST'])
@@ -30,8 +32,6 @@ def handle_string():
         f.write(dataSTRING)
     for filename in os.listdir(dir_path):
         print(filename)
-        if filename == "data.txt":
-            download_file(filename)
             
     return 'OK, STRING recibido'
 
