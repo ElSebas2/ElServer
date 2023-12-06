@@ -16,6 +16,7 @@ def handle_json():
         json.dump(data, f)
     return 'OK, JSON recibido'
 
+@app.route('/string', methods=['POST'])
 def handle_string():
     global dataSTRING
     dataSTRING = request.data.decode('utf-8')
