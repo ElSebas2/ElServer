@@ -7,7 +7,7 @@ for filename in os.listdir(dir_path):
     print(filename)
     
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": ["http://127.0.0.1:5500", "http://hain.umag.cl/~arilopez/"]}})
+CORS(app)
 global dataJSON
 global dataSTRING
 @app.route('/json', methods=['POST'])
