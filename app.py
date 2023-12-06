@@ -4,7 +4,6 @@ import os
 
 dir_path = os.getcwd()
 for filename in os.listdir(dir_path):
-    print("dir:")
     print(filename)
     
 app = Flask(__name__)
@@ -30,8 +29,10 @@ def handle_string():
     with open('data.txt', 'w') as f:
         f.write(dataSTRING)
     for filename in os.listdir(dir_path):
-        print("dir:")
         print(filename)
+        if filename == "data.txt":
+            download_file(filename)
+            
     return 'OK, STRING recibido'
 
 from flask import send_file
