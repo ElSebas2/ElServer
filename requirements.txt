@@ -1,3 +1,7 @@
 Flask
 Gunicorn
 flask_cors
+pyaudio
+wave
+threading
+multiprocessing
