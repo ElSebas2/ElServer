@@ -42,8 +42,6 @@ def download_file(filename):
     try:
         response = send_file(filename, as_attachment=True)
         os.remove(filename)
-        for filename in os.listdir(dir_path):
-        print(filename)
         return response
     except Exception as e:
         return str(e)
