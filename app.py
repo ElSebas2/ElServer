@@ -1,5 +1,8 @@
 from flask import Flask, request, json
 from flask_cors import CORS
+import os
+
+print(os.getcwd())
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": ["http://127.0.0.1:5500", "http://hain.umag.cl/~arilopez/"]}})
