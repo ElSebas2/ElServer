@@ -23,5 +23,15 @@ def handle_string():
     print(f'String recibido: {dataSTRING}')
     with open('data.txt', 'w') as f:
         f.write(dataSTRING)
+    download_file(data.txt)
     return 'OK, STRING recibido'
+
+from flask import send_file
+
+@app.route('/download/<filename>', methods=['GET'])
+def download_file(filename):
+    try:
+        return send_file(filename, as_attachment=True)
+    except Exception as e:
+        return str(e)
 
