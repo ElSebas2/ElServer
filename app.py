@@ -23,7 +23,6 @@ def handle_string():
     print(f'String recibido: {dataSTRING}')
     with open('data.txt', 'w') as f:
         f.write(dataSTRING)
-    download_file(data.txt)
     return 'OK, STRING recibido'
 
 from flask import send_file
