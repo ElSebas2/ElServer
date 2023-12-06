@@ -41,8 +41,11 @@ from flask import send_file
 def download_file(filename):
     try:
         response = send_file(filename, as_attachment=True)
-        os.remove(filename)
+        if os.path.exists('data.json') and os.path.exists('data.txt'):
+            os.remove('data.json')
+            os.remove('data.txt')
         return response
     except Exception as e:
         return str(e)
+
 
